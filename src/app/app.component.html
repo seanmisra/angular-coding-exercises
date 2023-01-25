@@ -1,8 +1,5 @@
-<div class="wrapper">
-  <label for="myInput">My Input: </label>
-  <input id="myInput" [(ngModel)]="myInput">
+<h1>Retrieved Data</h1>
 
-  <p>My Input Value: {{ myInput }}</p>
-
-  <button (click)="getMyInput()">Get Input</button>
-</div>
+<p>Name: {{ retrievedData?.name }}</p>
+<p>Location: {{ retrievedData?.location }}</p>
+<p>Id: {{ retrievedData?.id }}</p>
