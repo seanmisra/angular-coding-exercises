@@ -1,5 +1,10 @@
-<h1>Retrieved Data</h1>
+<div class="parent-wrapper">
+  <h1>Parent Component</h1>
+  <test-child
+    [sampleText]="'Dummy text'"
+    (trigger)="handleTrigger($event)"
+  >
+  </test-child>
 
-<p>Name: {{ retrievedData?.name }}</p>
-<p>Location: {{ retrievedData?.location }}</p>
-<p>Id: {{ retrievedData?.id }}</p>
+  <p>Message from child: {{ messageFromChild }}</p>
+</div>

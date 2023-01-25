@@ -10,19 +10,18 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
 
-  retrievedData: any;
-  testDataSub: Subscription;
+  messageFromChild: string;
 
   constructor(private testData: TestData) {
   }
 
   ngOnInit() {
-    this.testDataSub = this.testData.getData().subscribe(result => {
-      this.retrievedData = result;
-    });
   }
 
   ngOnDestroy() {
-    this.testDataSub.unsubscribe();
+  }
+
+  handleTrigger(message: string) {
+    this.messageFromChild = message;
   }
 }
