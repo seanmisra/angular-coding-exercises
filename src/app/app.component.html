@@ -1,8 +1,14 @@
-<div class="parent-wrapper">
-  <h1>Parent Class</h1>
-  <test-child #testChild>
-    <p>Passed with ng-content to the child</p>
-  </test-child>  
+<div class="parent-wrapper">  
 
-  <p><strong>Child component var retrieved with ContentChild:</strong> {{ testChild?.childVar}}</p>
+  <div *ngIf="testSwitch else elseCondition">
+    {{ dataOne }}
+  </div>
+
+  <ng-template #elseCondition>
+    <div class>
+      {{ dataTwo }}
+    </div>
+  </ng-template>
+
+  <button (click)="testSwitch = !testSwitch">Switch Data</button>
 </div>

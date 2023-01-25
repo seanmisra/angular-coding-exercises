@@ -1,4 +1,4 @@
-import { Component, ContentChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { TestData } from './test-data.service';
 import { OnInit } from '@angular/core';
 
@@ -8,8 +8,11 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  testSwitch = true;
 
-  @ContentChild('testChild') testChild: ElementRef; 
+  dataOne = "This data is coming from the if clause";
+  dataTwo = "This data is coming from the else clause";
+
 
   constructor(private testData: TestData) {
   }
