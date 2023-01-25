@@ -1,1 +1,8 @@
-{{ title }}
+<div class="wrapper">
+  <label for="myInput">My Input: </label>
+  <input id="myInput" [(ngModel)]="myInput">
+
+  <p>My Input Value: {{ myInput }}</p>
+
+  <button (click)="getMyInput()">Get Input</button>
+</div>
