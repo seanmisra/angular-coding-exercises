@@ -8,25 +8,6 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  animals = [
-    {
-      name: "eagle",
-      canFly: true
-    },
-    {
-      name: "dog",
-      canFly: false
-    },
-    {
-      name: "cat",
-      canFly: false
-    },
-    {
-      name: "bat",
-      canFly: true
-    }
-  ]
-
 
   constructor(private testData: TestData) {
   }
