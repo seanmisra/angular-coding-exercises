@@ -1,4 +1,4 @@
-import { ColorDirective } from './color-directive.directive';
+import { ColorDirective } from './color.directive';
 
 describe('ColorDirectiveDirective', () => {
   it('should create an instance', () => {
