@@ -1,14 +1,6 @@
 <div class="parent-wrapper">  
-
-  <div *ngIf="testSwitch else elseCondition">
-    {{ dataOne }}
-  </div>
-
-  <ng-template #elseCondition>
-    <div class>
-      {{ dataTwo }}
-    </div>
-  </ng-template>
-
-  <button (click)="testSwitch = !testSwitch">Switch Data</button>
+  <h2>Animals that can fly</h2>
+  <ng-container *ngFor="let animal of animals">
+    <div *ngIf="animal?.canFly">{{ animal?.name}}</div>
+  </ng-container>
 </div>

@@ -8,10 +8,24 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  testSwitch = true;
-
-  dataOne = "This data is coming from the if clause";
-  dataTwo = "This data is coming from the else clause";
+  animals = [
+    {
+      name: "eagle",
+      canFly: true
+    },
+    {
+      name: "dog",
+      canFly: false
+    },
+    {
+      name: "cat",
+      canFly: false
+    },
+    {
+      name: "bat",
+      canFly: true
+    }
+  ]
 
 
   constructor(private testData: TestData) {
