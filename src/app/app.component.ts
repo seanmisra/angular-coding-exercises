@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ContentChild, ElementRef } from '@angular/core';
 import { TestData } from './test-data.service';
 import { OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
 
-  messageFromChild: string;
+  @ContentChild('testChild') testChild: ElementRef; 
 
   constructor(private testData: TestData) {
   }
@@ -21,7 +20,4 @@ export class AppComponent implements OnInit {
   ngOnDestroy() {
   }
 
-  handleTrigger(message: string) {
-    this.messageFromChild = message;
-  }
 }

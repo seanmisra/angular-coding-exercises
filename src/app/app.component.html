@@ -1,10 +1,8 @@
 <div class="parent-wrapper">
-  <h1>Parent Component</h1>
-  <test-child
-    [sampleText]="'Dummy text'"
-    (trigger)="handleTrigger($event)"
-  >
-  </test-child>
+  <h1>Parent Class</h1>
+  <test-child #testChild>
+    <p>Passed with ng-content to the child</p>
+  </test-child>  
 
-  <p>Message from child: {{ messageFromChild }}</p>
+  <p><strong>Child component var retrieved with ContentChild:</strong> {{ testChild?.childVar}}</p>
 </div>

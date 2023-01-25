@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'test-child',
@@ -7,9 +7,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class TestChildComponent implements OnInit {
 
-  @Input() sampleText: string;
-
-  @Output() trigger = new EventEmitter<string>();
+  childVar = 'This message is from a string in the child';
 
   constructor() { }
 
@@ -17,8 +15,6 @@ export class TestChildComponent implements OnInit {
   }
 
   sendToParent() {
-    this.trigger.emit('Message from child');
   }
  
-
 }
