@@ -1,5 +1,7 @@
 <h1>Home</h1>
-<label for="userId">User Id: </label>
-<input id="userId" type="number" min="0" max="10" [(ngModel)]="userId">
-<br><br>
-<button (click)="handleNavigate()">Navigate</button>
+<ng-template #myTemplate>
+    Content rendered with ngTemplateOutlet
+</ng-template>
+
+<ng-container *ngTemplateOutlet="myTemplate">
+</ng-container>
