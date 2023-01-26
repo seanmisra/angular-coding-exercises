@@ -21,14 +21,22 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.retrieveAnimals();
   }
 
   ngOnDestroy() {
+    this.$animalSub.unsubscribe();
   }
 
   handleLogin() {
     this.authService.isLoggedIn.next(true);
     this.router.navigate(['homepage']);
+  }
+
+  retrieveAnimals() {
+    this.$animalSub = this.testData.getNonFlyingAnimals().subscribe(data => {
+      this.retrievedAnimals = data;
+    })
   }
 
 }

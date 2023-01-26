@@ -1,2 +1,10 @@
-<router-outlet></router-outlet>
-<button (click)="handleLogin()">Login</button>
+<table class="my-table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let animal of retrievedAnimals">
+        <td> {{ animal.name }} </td>
+        <td> {{ animal.id }} </td>
+    </tr>
+</table>

@@ -13,5 +13,6 @@
 12) Example of ngSwitch
 13) Implement a custom pipe with PipeTransform
 14) Demonstrate a routing guard with CanActivate
+15) Demonstrate usage of rxjs operators pipe and map (ideally together)
 
 Commits correspond to each exercise
