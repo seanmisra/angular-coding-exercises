@@ -1,50 +1,35 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { of, Observable, map, debounceTime, distinctUntilChanged } from 'rxjs';
+import { Injectable, OnDestroy } from "@angular/core";
+import { of, Observable, map, debounceTime, distinctUntilChanged, forkJoin, Subscription } from 'rxjs';
 
 @Injectable({
     providedIn: "root"
 })
-export class TestData {
+export class TestData implements OnDestroy {
+    private $animalSub = new Subscription();
+
     constructor(private http: HttpClient) {
     }
 
-    mockResults = [
-        'dog',
-        'cat',
-        'hippo',
-        'rhino',
-        'bird',
-        'eagle',
-        'lion',
-        'tiger',
-        'cheetah'
-    ];
+    private getAllAnimalsImpl(): Observable<any> {
+        let resultOne = this.http.get('./assets/mockData1.json');
+        let resultTwo = this.http.get('./assets/mockData2.json');
+        let resultThree = this.http.get('./assets/mockData3.json');
 
-    getSearchResults (searchTerm: string): Observable<any> {
-        console.log("search!");
-        return of(this.mockResults.filter(result => {
-            return result.includes(searchTerm);
-        }));
+        return forkJoin([resultOne, resultTwo, resultThree]);
     }
 
-    getNonFlyingAnimals(): Observable<any> {
-        return this.http.get('./assets/mockData.json').pipe(
-            map((animals: any[]) => {
-                return animals.filter((animal: any) => {
-                    return !animal.canFly;
-                })
-            }),
-            map((animals: any[]) => {
-                const animalArray = [];
-                animals.forEach((animal: any) => {
-                    animalArray.push({
-                        name: animal.name,
-                        id: animal.id
-                    });
-                })
-                return animalArray;
-            })
-        );
+    getAllAnimals(): any[] {
+        const allAnimals = [];
+        this.$animalSub = this.getAllAnimalsImpl().subscribe(allResults => {
+            allAnimals.push(...allResults[0]);
+            allAnimals.push(...allResults[1]);
+            allAnimals.push(...allResults[2]);
+        })
+        return allAnimals;
+    }
+
+    ngOnDestroy() {
+        this.$animalSub.unsubscribe();
     }
 }

@@ -14,27 +14,15 @@ import { debounceTime, distinctUntilChanged, Subscription, mergeMap } from 'rxjs
 export class AppComponent implements OnInit {
 
   retrievedAnimals = [];
-  $animalSub = new Subscription();
   searchForm: FormGroup;
 
   constructor(private testData: TestData, private authService: AuthService, private router: Router) {
   }
 
   ngOnInit() {
-    this.searchForm = new FormGroup({
-      animalSearch: new FormControl('')
-    });
-
-    this.$animalSub = this.searchForm.get('animalSearch').valueChanges.pipe(
-      debounceTime(500),
-      distinctUntilChanged(),
-      mergeMap(result => { return this.testData.getSearchResults(result)})
-    ).subscribe(searchResults => {
-      this.retrievedAnimals = searchResults;
-    })
+    this.retrievedAnimals = this.testData.getAllAnimals();
   }
 
   ngOnDestroy() {
-    this.$animalSub.unsubscribe();
   }
 }
