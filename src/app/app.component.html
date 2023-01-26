@@ -1,10 +1,9 @@
-<table class="my-table">
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-    </tr>
-    <tr *ngFor="let animal of retrievedAnimals">
-        <td> {{ animal.name }} </td>
-        <td> {{ animal.id }} </td>
-    </tr>
-</table>
+<form [formGroup]="searchForm">
+    <label for="animal-search">animal search: </label>
+    <input id="animal-search" type="text" formControlName="animalSearch">
+</form>
+
+<h2>Search Results: </h2>
+<div *ngFor="let animal of retrievedAnimals">
+    {{ animal }}
+</div>

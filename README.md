@@ -14,5 +14,6 @@
 13) Implement a custom pipe with PipeTransform
 14) Demonstrate a routing guard with CanActivate
 15) Demonstrate usage of rxjs operators pipe and map (ideally together)
+16) Create a typeahead input that uses the rxjs operators debounceTime and distinctUntilChanged
 
 Commits correspond to each exercise

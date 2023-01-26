@@ -1,12 +1,31 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { of, Observable, map, filter} from 'rxjs';
+import { of, Observable, map, debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Injectable({
     providedIn: "root"
 })
 export class TestData {
     constructor(private http: HttpClient) {
+    }
+
+    mockResults = [
+        'dog',
+        'cat',
+        'hippo',
+        'rhino',
+        'bird',
+        'eagle',
+        'lion',
+        'tiger',
+        'cheetah'
+    ];
+
+    getSearchResults (searchTerm: string): Observable<any> {
+        console.log("search!");
+        return of(this.mockResults.filter(result => {
+            return result.includes(searchTerm);
+        }));
     }
 
     getNonFlyingAnimals(): Observable<any> {
