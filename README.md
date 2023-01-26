@@ -12,5 +12,6 @@
 11) Reactive Forms example
 12) Example of ngSwitch
 13) Implement a custom pipe with PipeTransform
+14) Demonstrate a routing guard with CanActivate
 
 Commits correspond to each exercise

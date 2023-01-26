@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { TestData } from './test-data.service';
 import { OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
+import { AuthService } from './auth/auth.service';
+import { Router } from '@angular/router'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,20 +13,11 @@ import { FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class AppComponent implements OnInit {
 
-  userForm: FormGroup;
+  retrievedAnimals = [];
+  $animalSub = new Subscription();
 
-  get years() {
-    if (this.userForm && this.userForm.get('yearsOfExperience')) {
-      return this.userForm.get('yearsOfExperience').value
-    } else {
-      return null;
-    }
-  }
+  constructor(private testData: TestData, private authService: AuthService, private router: Router) {
 
-  constructor(private testData: TestData) {
-    this.userForm = new FormGroup({
-      yearsOfExperience: new FormControl('')
-    });
   }
 
   ngOnInit() {
@@ -32,8 +26,9 @@ export class AppComponent implements OnInit {
   ngOnDestroy() {
   }
 
-  handleSubmit() {
-    console.log(this.userForm); 
+  handleLogin() {
+    this.authService.isLoggedIn.next(true);
+    this.router.navigate(['homepage']);
   }
 
 }

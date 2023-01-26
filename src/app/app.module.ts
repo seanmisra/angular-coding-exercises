@@ -8,9 +8,9 @@ import { TestChildComponent } from './test-child/test-child.component';
 import { ColorDirective } from './color.directive';
 import { UserComponent } from './user/user.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule  } from '@angular/forms';
 import { ErrorPipe } from './error.pipe';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { ErrorPipe } from './error.pipe';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
