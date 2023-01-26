@@ -1,17 +1,17 @@
-<h1>Reactive Form</h1>
+<h1>ngSwitch Example</h1>
 
-<form [formGroup]="userForm" (submit)="handleSubmit()">
-    <label for="firstName">First Name: </label>
-    <input id="firstName" formControlName="firstName">
-    <br>
-
-    <label for="lastName">Last Name: </label>
-    <input id="lastName" formControlName="lastName">
-    <br>
-
-    <label for="password">Password: </label>
-    <input id="password" formControlName="password">
-    <br>
-
-    <button [disabled]="userForm.invalid">Submit</button>
+<form [formGroup]="userForm">
+    <label for="yearsOfExperience">Years of experience (0-5): </label>
+    <input type="number" max="5" min="0" id="yearsOfExperience" formControlName="yearsOfExperience">
 </form>
+
+<h2>Experience Level</h2>
+<div [ngSwitch]="years">
+    <div *ngSwitchCase="0">Beginner</div>
+    <div *ngSwitchCase="1">Beginner</div>
+    <div *ngSwitchCase="2">Experienced</div>
+    <div *ngSwitchCase="3">Experienced</div>
+    <div *ngSwitchCase="4">Advanced</div>
+    <div *ngSwitchCase="5">Advanced</div>
+    <div *ngSwitchDefault>Invalid, please enter a value between 0 and 5</div>
+</div>

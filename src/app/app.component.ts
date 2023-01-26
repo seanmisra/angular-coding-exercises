@@ -12,11 +12,17 @@ export class AppComponent implements OnInit {
 
   userForm: FormGroup;
 
+  get years() {
+    if (this.userForm && this.userForm.get('yearsOfExperience')) {
+      return this.userForm.get('yearsOfExperience').value
+    } else {
+      return null;
+    }
+  }
+
   constructor(private testData: TestData) {
     this.userForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      yearsOfExperience: new FormControl('')
     });
   }
 

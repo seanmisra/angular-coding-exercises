@@ -10,5 +10,6 @@
 9) Example of dynamic routing
 10) Example of ngTemplateOutlet
 11) Reactive Forms example
+12) Example of ngSwitch
 
 Commits correspond to each exercise
