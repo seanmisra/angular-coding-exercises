@@ -1,17 +1,3 @@
-<h1>ngSwitch Example</h1>
+<h1>Welcome</h1>
 
-<form [formGroup]="userForm">
-    <label for="yearsOfExperience">Years of experience (0-5): </label>
-    <input type="number" max="5" min="0" id="yearsOfExperience" formControlName="yearsOfExperience">
-</form>
-
-<h2>Experience Level</h2>
-<div [ngSwitch]="years">
-    <div *ngSwitchCase="0">Beginner</div>
-    <div *ngSwitchCase="1">Beginner</div>
-    <div *ngSwitchCase="2">Experienced</div>
-    <div *ngSwitchCase="3">Experienced</div>
-    <div *ngSwitchCase="4">Advanced</div>
-    <div *ngSwitchCase="5">Advanced</div>
-    <div *ngSwitchDefault>Invalid, please enter a value between 0 and 5</div>
-</div>
+<p>{{"Trouble loading page" | error }}</p>

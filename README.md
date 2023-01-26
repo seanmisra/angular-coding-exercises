@@ -11,5 +11,6 @@
 10) Example of ngTemplateOutlet
 11) Reactive Forms example
 12) Example of ngSwitch
+13) Implement a custom pipe with PipeTransform
 
 Commits correspond to each exercise

@@ -10,6 +10,7 @@ import { UserComponent } from './user/user.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule  } from '@angular/forms';
+import { ErrorPipe } from './error.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule  } from '@angular/forms';
     TestChildComponent,
     ColorDirective,
     UserComponent,
-    HomepageComponent
+    HomepageComponent,
+    ErrorPipe
   ],
   imports: [
     BrowserModule,
