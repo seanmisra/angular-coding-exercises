@@ -9,5 +9,6 @@
 8) Create a directive that will give an element a random color everytime you load the page
 9) Example of dynamic routing
 10) Example of ngTemplateOutlet
+11) Reactive Forms example
 
 Commits correspond to each exercise

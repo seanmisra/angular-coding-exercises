@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<h1>Reactive Form</h1>
+
+<form [formGroup]="userForm" (submit)="handleSubmit()">
+    <label for="firstName">First Name: </label>
+    <input id="firstName" formControlName="firstName">
+    <br>
+
+    <label for="lastName">Last Name: </label>
+    <input id="lastName" formControlName="lastName">
+    <br>
+
+    <label for="password">Password: </label>
+    <input id="password" formControlName="password">
+    <br>
+
+    <button [disabled]="userForm.invalid">Submit</button>
+</form>
