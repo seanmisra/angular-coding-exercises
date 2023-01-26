@@ -13,6 +13,9 @@ import { debounceTime, distinctUntilChanged, Subscription, mergeMap } from 'rxjs
 })
 export class AppComponent implements OnInit {
 
+  applicationName = 'testApplication';
+  randomProp = '';
+
   retrievedAnimals = [];
   searchForm: FormGroup;
 
@@ -25,4 +28,16 @@ export class AppComponent implements OnInit {
 
   ngOnDestroy() {
   }
+
+  testFunction() {
+    this.testFunctionTwo();
+  }
+
+  testFunctionTwo() {
+    this.randomProp = 'test';
+  }
+
+
+
+
 }
