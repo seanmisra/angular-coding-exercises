@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, OnDestroy } from "@angular/core";
-import { of, Observable, map, debounceTime, distinctUntilChanged, forkJoin, Subscription } from 'rxjs';
+import { of, Observable, map, debounceTime, distinctUntilChanged, forkJoin, Subscription, delay } from 'rxjs';
 
 @Injectable({
     providedIn: "root"
@@ -31,5 +31,22 @@ export class TestData implements OnDestroy {
 
     ngOnDestroy() {
         this.$animalSub.unsubscribe();
+    }
+
+    // for switchMap practicing
+    getDataTimeout(val): Observable<any> {
+        if (!val) {
+            return of([]).pipe(delay(2000));
+        }
+        let oneNumb = Math.random();
+        let twoNumb = Math.random();
+        let threeNumb = Math.random();
+        let fourNumb = Math.random();
+        let fiveNumb = Math.random();
+
+
+        return of([oneNumb, twoNumb, threeNumb, fourNumb, fiveNumb]).pipe(
+            delay(2000)
+        );
     }
 }

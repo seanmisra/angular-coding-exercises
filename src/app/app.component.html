@@ -1,11 +1,11 @@
-<h1>Animals: </h1>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Id</th>
-    </tr>
-    <tr *ngFor="let animal of retrievedAnimals">
-        <td> {{ animal.name }} </td>
-        <td> {{ animal.id}} </td>
-    </tr>
-</table>
+<h1>Random Number Search: </h1>
+
+<form [formGroup]="searchForm"> 
+    <input formControlName="searchInput">
+</form>
+
+<br>
+<span *ngIf="retrievedNumbs.length > 0">Random Numbers</span>
+<div *ngFor="let numb of retrievedNumbs">
+    {{ numb }}
+</div>
