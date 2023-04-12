@@ -22,14 +22,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    let obs1$ = interval(1000);
-    let obs2$ = timer(7000);
 
-    this.sub = obs1$.pipe(
-      takeUntil(obs2$)
-    ).subscribe(val =>
-      console.log(val)
-    )
+    // 2 in 3 times asset will fail to load
+    this.sub = this.testData.getDataRandom().subscribe(
+      data => console.log(data)
+    );
   }
 
   ngOnDestroy() {

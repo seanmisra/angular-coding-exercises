@@ -22,5 +22,6 @@
 21) Demonstrate using rxjs take, first, last
 22) Demonstrate using rxjs takeUntil
 23) Example of child (nested) routes
+24) rxjs error handling: catchError
 
 Commits correspond to each exercise
