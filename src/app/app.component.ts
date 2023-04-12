@@ -25,7 +25,15 @@ export class AppComponent implements OnInit {
 
     // 2 in 3 times asset will fail to load
     this.sub = this.testData.getDataRandom().subscribe(
-      data => console.log(data)
+      data => console.log(data),
+      error => {
+        console.log("ERROR calling API");
+        if (error.status.toString().startsWith("5")) {
+          throw(error);
+        } else {
+          console.log(error.message);
+        }
+      }
     );
   }
 

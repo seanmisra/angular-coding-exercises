@@ -23,5 +23,6 @@
 22) Demonstrate using rxjs takeUntil
 23) Example of child (nested) routes
 24) rxjs error handling: catchError
+25) rxjs error handling: handle error within subscription
 
 Commits correspond to each exercise

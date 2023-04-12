@@ -64,12 +64,6 @@ export class TestData implements OnDestroy {
             asset = "./assets/mockData1.json";
         }
 
-        return this.http.get(asset).pipe(
-            catchError(error => {
-                console.log("ERROR: ");
-                console.log(error);
-                return of([]);
-            })
-        )
+        return this.http.get(asset);
     }
 }
