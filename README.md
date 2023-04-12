@@ -21,5 +21,6 @@
 20) Demonstrate use of rxjs combineLatest
 21) Demonstrate using rxjs take, first, last
 22) Demonstrate using rxjs takeUntil
+23) Example of child (nested) routes
 
 Commits correspond to each exercise

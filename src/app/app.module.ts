@@ -11,6 +11,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ReactiveFormsModule  } from '@angular/forms';
 import { ErrorPipe } from './error.pipe';
 import { AppRoutingModule } from './app-routing.module';
+import { DetailsComponent } from './homepage/details/details.component';
+import { InfoComponent } from './homepage/info/info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AppRoutingModule } from './app-routing.module';
     ColorDirective,
     UserComponent,
     HomepageComponent,
-    ErrorPipe
+    ErrorPipe,
+    DetailsComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
