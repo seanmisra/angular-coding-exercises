@@ -19,5 +19,6 @@
 18) Write several karma/jasmine test cases that pass
 19) Create a typeahead input that uses rxjs switchMap
 20) Demonstrate use of rxjs combineLatest
+21) Demonstrate using rxjs take, first, last
 
 Commits correspond to each exercise

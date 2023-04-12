@@ -4,7 +4,7 @@ import { OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { AuthService } from './auth/auth.service';
 import { Router } from '@angular/router'
-import { debounceTime, distinctUntilChanged, Subscription, mergeMap, tap, switchMap, concatMap, interval, combineLatest } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subscription, mergeMap, tap, switchMap, concatMap, interval, combineLatest, of, from, first, last, take } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,10 @@ export class AppComponent implements OnInit {
 
   applicationName = 'testApplication';
   randomProp = '';
+  firstSub: Subscription;
+  secondSub: Subscription;
+  thirdSub: Subscription;
+
 
   
 
@@ -23,35 +27,32 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    let obs1$ = interval(1000);
-    let obs2$ = interval(2000);
-    let obs3$ = interval(5000);
+    let valuesToEmit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-    let counter = 0;
-    let intervalCounter = setInterval(() => {
-      counter++;
-      console.log("Seconds elapsed: " + counter);
-    }, 1000);
+    this.firstSub = from(valuesToEmit).pipe(
+      first()
+    ).subscribe(val => {
+      console.log("first val: " + val); 
+    })
 
-    let combinedSub = combineLatest([obs1$, obs2$, obs3$], (one, two, three) => {
-      return [one, two, three];
-    }).subscribe(allData => {
-      // notice that the first emission is when all observables emit at least one value (after 5 seconds)
+    this.secondSub = from(valuesToEmit).pipe(
+      last()
+    ).subscribe(val => {
+      console.log("last val: " + val);
+    })
 
-      console.log("obs1$: ", allData[0]);
-      console.log("obs2$: ", allData[1]);
-      console.log("obs3$: ", allData[2]);
+    this.thirdSub = from(valuesToEmit).pipe(
+      take(5)
+    ).subscribe(val => {
+      console.log("next val: " + val);
     });
-
-    // finish after 10 seconds
-    setTimeout(() => {
-      combinedSub.unsubscribe();
-      clearInterval(intervalCounter);
-    }, 10000);
 
   }
 
   ngOnDestroy() {
+    this.firstSub.unsubscribe();
+    this.secondSub.unsubscribe();
+    this.thirdSub.unsubscribe();
   }
 
 
