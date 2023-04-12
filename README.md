@@ -20,5 +20,6 @@
 19) Create a typeahead input that uses rxjs switchMap
 20) Demonstrate use of rxjs combineLatest
 21) Demonstrate using rxjs take, first, last
+22) Demonstrate using rxjs takeUntil
 
 Commits correspond to each exercise
