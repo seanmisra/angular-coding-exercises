@@ -18,5 +18,6 @@
 17) Demonstrate a use case for the forkJoin rxjs operator
 18) Write several karma/jasmine test cases that pass
 19) Create a typeahead input that uses rxjs switchMap
+20) Demonstrate use of rxjs combineLatest
 
 Commits correspond to each exercise
