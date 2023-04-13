@@ -26,5 +26,6 @@
 25) rxjs error handling: handle error within subscription
 26) Example of async/await (instead of then with Promise)
 27) Implement lazy loading for a feature module
+28) Example of ngrx to save state (ex: when navigating btw routes preserve a value in form)
 
 Commits correspond to each exercise

@@ -11,6 +11,7 @@ import { ReactiveFormsModule  } from '@angular/forms';
 import { ErrorPipe } from './error.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MainComponent } from './main/main.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
