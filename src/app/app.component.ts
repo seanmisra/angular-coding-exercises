@@ -22,24 +22,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.handleTestData();
   }
 
   ngOnDestroy() {
   }
 
 
-  async handleTestData() {
-    let testData = await this.getTestData();
-    console.log(testData);
-  }
-
-  getTestData(): Promise<string> {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve("resolve after 5 seconds");
-      }, 5000);
-    });
-  }
 
 }

@@ -4,26 +4,22 @@ import { AuthGuard } from './auth/auth.guard';
 import { DetailsComponent } from './homepage/details/details.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { InfoComponent } from './homepage/info/info.component';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
     {
         path: 'homepage',
-        component: HomepageComponent,
-        children: [
-            {
-                path: 'details',
-                component: DetailsComponent
-            },
-            {
-                path: 'info',
-                component: InfoComponent
-            }
-        ]
+        loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)
     },
     {
-        path: '**',
-        component: HomepageComponent,
+        path: 'main',
+        component: MainComponent
+    },
+    {
+        path: "**", 
+        component: MainComponent
     }
+
 ]
 
 @NgModule({

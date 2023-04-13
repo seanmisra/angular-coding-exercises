@@ -25,5 +25,6 @@
 24) rxjs error handling: catchError
 25) rxjs error handling: handle error within subscription
 26) Example of async/await (instead of then with Promise)
+27) Implement lazy loading for a feature module
 
 Commits correspond to each exercise
