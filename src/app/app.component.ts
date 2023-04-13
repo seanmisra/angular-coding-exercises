@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, resolveForwardRef } from '@angular/core';
 import { TestData } from './test-data.service';
 import { OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
@@ -22,23 +22,24 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    // 2 in 3 times asset will fail to load
-    this.sub = this.testData.getDataRandom().subscribe(
-      data => console.log(data),
-      error => {
-        console.log("ERROR calling API");
-        if (error.status.toString().startsWith("5")) {
-          throw(error);
-        } else {
-          console.log(error.message);
-        }
-      }
-    );
+    this.handleTestData();
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+  }
+
+
+  async handleTestData() {
+    let testData = await this.getTestData();
+    console.log(testData);
+  }
+
+  getTestData(): Promise<string> {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve("resolve after 5 seconds");
+      }, 5000);
+    });
   }
 
 }

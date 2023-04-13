@@ -24,5 +24,6 @@
 23) Example of child (nested) routes
 24) rxjs error handling: catchError
 25) rxjs error handling: handle error within subscription
+26) Example of async/await (instead of then with Promise)
 
 Commits correspond to each exercise
