@@ -30,5 +30,6 @@
 29) Set up mini node/express back-end and call API to retrieve data
 30) 3 ways to dynamically style in the template (ngStyle, ngClass, style.x)
 31) FormBuilder example
+32) set/get/delete cookie (ngx-cookie-service)
 
 Commits correspond to each exercise

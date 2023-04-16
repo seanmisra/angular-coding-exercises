@@ -12,6 +12,7 @@ import { ErrorPipe } from './error.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
 import { StoreModule } from '@ngrx/store';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { StoreModule } from '@ngrx/store';
     ReactiveFormsModule,
     StoreModule.forRoot({}, {})
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

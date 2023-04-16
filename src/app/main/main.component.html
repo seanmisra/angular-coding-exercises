@@ -1,16 +1,6 @@
-<h1>FormBuilder Example</h1>
-
-<form [formGroup]="customerForm">
-    <label for="firstName">First Name: </label>
-    <input formControlName="firstName" type="text" id="firstName">
-    <br>
-
-    <label for="lastName">Last Name: </label>
-    <input formControlName="lastName" type="text" id="lastName">
-    <br>
-
-    <label for="existingCustomer">Existing Customer: </label>
-    <input formControlName="existingCustomer" type="checkbox" id="existingCustomer">
-
-    <button (click)="submitForm()" type="submit">Submit Data</button>
-</form>
+<h1>Cookie Test</h1>
+<h2>Refresh to increment the count</h2>
+<span>Cookie Name: cookieCounter</span>
+<span>Cookie Val: {{ currentCount }}</span>
+<br>
+<button (click)="resetCookie()">Reset Counter</button>
