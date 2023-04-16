@@ -66,4 +66,8 @@ export class TestData implements OnDestroy {
 
         return this.http.get(asset);
     }
+
+    getDataFromService(): Observable<any[]> {
+        return this.http.get<any[]>('http://localhost:8080/fetchAnimals'); 
+    }
 }

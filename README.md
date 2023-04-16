@@ -27,5 +27,6 @@
 26) Example of async/await (instead of then with Promise)
 27) Implement lazy loading for a feature module
 28) Example of ngrx to save state (ex: when navigating btw routes preserve a value in form)
+29) Set up mini node/express back-end and call API to retrieve data
 
 Commits correspond to each exercise

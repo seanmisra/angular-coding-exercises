@@ -22,6 +22,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.testData.getDataFromService().subscribe(dataFromExpress => {
+      console.log("DATA FROM EXPRESS: ");
+      console.log(dataFromExpress);
+    })
   }
 
   ngOnDestroy() {
