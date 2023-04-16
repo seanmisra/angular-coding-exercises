@@ -1,1 +1,16 @@
-<p>main works!</p>
+<div>
+    3 ways to style in template dynamically, should be green/yellow/red:
+</div><br>
+
+
+<div [ngClass]="{'green-color': flag}">
+    First Div
+</div>
+
+<div [ngStyle]="{'color': flag ? 'yellow' : 'green'}">
+    Second Div
+</div>
+
+<div [style.color]="thirdColor">
+    Third Div
+</div>

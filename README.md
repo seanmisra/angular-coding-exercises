@@ -28,5 +28,6 @@
 27) Implement lazy loading for a feature module
 28) Example of ngrx to save state (ex: when navigating btw routes preserve a value in form)
 29) Set up mini node/express back-end and call API to retrieve data
+30) 3 ways to dynamically style in the template (ngStyle, ngClass, style.x)
 
 Commits correspond to each exercise
