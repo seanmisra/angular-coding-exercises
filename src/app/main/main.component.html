@@ -1,16 +1,16 @@
-<div>
-    3 ways to style in template dynamically, should be green/yellow/red:
-</div><br>
+<h1>FormBuilder Example</h1>
 
+<form [formGroup]="customerForm">
+    <label for="firstName">First Name: </label>
+    <input formControlName="firstName" type="text" id="firstName">
+    <br>
 
-<div [ngClass]="{'green-color': flag}">
-    First Div
-</div>
+    <label for="lastName">Last Name: </label>
+    <input formControlName="lastName" type="text" id="lastName">
+    <br>
 
-<div [ngStyle]="{'color': flag ? 'yellow' : 'green'}">
-    Second Div
-</div>
+    <label for="existingCustomer">Existing Customer: </label>
+    <input formControlName="existingCustomer" type="checkbox" id="existingCustomer">
 
-<div [style.color]="thirdColor">
-    Third Div
-</div>
+    <button (click)="submitForm()" type="submit">Submit Data</button>
+</form>
