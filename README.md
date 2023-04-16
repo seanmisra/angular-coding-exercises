@@ -31,5 +31,6 @@
 30) 3 ways to dynamically style in the template (ngStyle, ngClass, style.x)
 31) FormBuilder example
 32) set/get/delete cookie (ngx-cookie-service)
+33) ReplaySubject vs Subject (demonstrate difference)
 
 Commits correspond to each exercise
