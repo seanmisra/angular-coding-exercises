@@ -33,5 +33,6 @@
 32) set/get/delete cookie (ngx-cookie-service)
 33) ReplaySubject vs Subject (demonstrate difference)
 34) ViewChild (demonstrate static prop: true vs false)
+35) Async pipe use cases
 
-Commits correspond to each exercise
+Commits correspond to each exercises
