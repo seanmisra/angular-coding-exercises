@@ -8,6 +8,11 @@ import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
     {
+        path: '',
+        component: MainComponent
+    },
+    {
+
         path: 'homepage',
         loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)
     },

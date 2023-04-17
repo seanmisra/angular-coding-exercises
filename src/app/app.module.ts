@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
 import { StoreModule } from '@ngrx/store';
 import { CookieService } from 'ngx-cookie-service';
+import { MainTopComponent } from './main/main-top/main-top.component';
+import { MainBottomComponent } from './main/main-bottom/main-bottom.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CookieService } from 'ngx-cookie-service';
     ColorDirective,
     UserComponent,
     ErrorPipe,
-    MainComponent
+    MainComponent,
+    MainTopComponent,
+    MainBottomComponent
   ],
   imports: [
     BrowserModule,

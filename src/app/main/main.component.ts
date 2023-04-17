@@ -1,58 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup  } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { ReplaySubject, Subject, Subscription } from 'rxjs';
+import { MainBottomComponent } from './main-bottom/main-bottom.component';
+import { MainTopComponent } from './main-top/main-top.component';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, AfterViewInit {
 
-  simpleSubject = new Subject();
-  replaySubject = new ReplaySubject(3);
+  @ViewChild(MainBottomComponent) mainBottom: MainBottomComponent;
+  @ViewChild(MainTopComponent) mainTop: MainTopComponent;
 
-  simpleSubscription = new Subscription();
-  replaySubscription = new Subscription();
+  @ViewChild(MainBottomComponent, {static: true}) mainBottomTwo: MainBottomComponent;
+  @ViewChild(MainTopComponent, {static: true}) mainTopTwo: MainTopComponent;
 
-
-  constructor(private cookieService: CookieService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.testSimpleSubject();
-    this.testReplaySubject();
+    this.getViewChildrenInfo();
   }
 
-  testSimpleSubject() {
-    this.simpleSubject.next(1); 
-    this.simpleSubject.next(2);
-
-    this.simpleSubscription = this.simpleSubject.subscribe(val => {
-      console.log("from simple subject: " + val);
-    });
-
-    this.simpleSubject.next(3); 
-    this.simpleSubject.next(4);
-    this.simpleSubject.next(5);
+  ngAfterViewInit() {
+    this.getViewChildrenInfo();
   }
 
-  testReplaySubject() {
-    this.replaySubject.next(1); 
-    this.replaySubject.next(2); 
-    this.replaySubject.next(3);
+  getViewChildrenInfo() {
+    console.log("STATIC: FALSE --- only defined afterViewInit");
+    console.log("main bottom component");
+    console.log(this.mainBottom);
+    console.log("main top component");
+    console.log(this.mainTop);
 
-    
-    this.replaySubscription = this.replaySubject.subscribe(val => {
-      console.log("from replay subject: " + val);
-    });
-
-    this.replaySubject.next(4); 
-    this.replaySubject.next(5); 
+    console.log("STATIC: TRUE --- defined at ngOnInit");
+    console.log("main bottom component");
+    console.log(this.mainBottomTwo);
+    console.log("main top component");
+    console.log(this.mainTopTwo);
   }
 
   ngOnDestroy() {
-    this.simpleSubscription.unsubscribe();
-    this.replaySubject.unsubscribe();
   }
 }
