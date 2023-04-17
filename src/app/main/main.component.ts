@@ -12,23 +12,21 @@ import { MainTopComponent } from './main-top/main-top.component';
 })
 export class MainComponent implements OnInit, AfterViewInit {
 
-  testObservable$: Observable<number>;
-  testObservableTwo$: Observable<any[]>;
+  caseOne = "Hello World";
+  caseTwo = null;
+  caseThree = "";
+  caseFour = undefined;
+  caseFive = 10;
+  caseSix = [];
+  caseSeven = [1, 2, 3];
 
 
   constructor() { }
 
   ngOnInit(): void {
-    this.getObservables();
   }
 
-  getObservables() {
-    this.testObservable$ = interval(1000);
 
-    setTimeout(() => {
-      this.testObservableTwo$ = of([1, 2, 3, 4, 5]);
-    }, 5000)
-  }
 
   ngAfterViewInit() {
   }

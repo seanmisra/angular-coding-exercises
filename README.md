@@ -32,7 +32,8 @@
 31) FormBuilder example
 32) set/get/delete cookie (ngx-cookie-service)
 33) ReplaySubject vs Subject (demonstrate difference)
-34) ViewChild (demonstrate static prop: true vs false)
+34) ViewChild (demonstrate static prop: true vs false) - Angular 9
 35) Async pipe use cases
+36) Nullish Coalescing - Angular 12
 
 Commits correspond to each exercises

@@ -1,11 +1,11 @@
 <h1>Main</h1>
 
-<h2>Observable 1 -- counter</h2>
-<div>
-    {{ testObservable$ | async}}
-</div>
-
-<h2>Observable 2 -- after 5 seconds</h2>
-<div *ngFor="let x of testObservableTwo$ | async">
-    {{ x }}
-</div>
+<!-- Will only show default text via nullish coalescing if null/undefined
+Notice that "" and [] do not default -->
+<h2>Case 1: {{ this.caseOne ?? "Default Text" }}</h2>
+<h2>Case 2: {{ this.caseTwo ?? "Default Text" }}</h2>
+<h2>Case 3: {{ this.caseThree ?? "Default Text"}}</h2>
+<h2>Case 4: {{ this.caseFour ?? "Default Text"}}</h2>
+<h2>Case 5: {{ this.caseFive ?? "DefaultText"}}</h2>
+<h2>Case 6: {{ this.caseSix ?? "DefaultText"}}</h2>
+<h2>Case 7: {{ this.caseSeven ?? "DefaultText"}}</h2>
