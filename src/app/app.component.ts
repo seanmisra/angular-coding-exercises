@@ -23,10 +23,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const allAnimals = this.testData.getAllAnimals();
-    setTimeout(() => {
-      console.log(allAnimals);
-    }, 1000); // dummy timeout to wait for data to return
   }
 
   ngOnDestroy() {

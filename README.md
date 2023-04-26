@@ -37,5 +37,6 @@
 36) Nullish Coalescing - Angular 12
 37) Create components (using ViewContainerRef createComponent()) - Angular 13
 38) Singleton service example
+39) ngOnInit vs ngAfterContentInit vs ngAfterViewInit (demonstrate timing differences)
 
 Commits correspond to each exercises
