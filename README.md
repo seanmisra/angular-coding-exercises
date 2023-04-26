@@ -38,5 +38,6 @@
 37) Create components (using ViewContainerRef createComponent()) - Angular 13
 38) Singleton service example
 39) ngOnInit vs ngAfterContentInit vs ngAfterViewInit (demonstrate timing differences)
+40) rxjs timer vs setInterval use case
 
 Commits correspond to each exercises
