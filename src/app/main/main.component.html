@@ -1,11 +1,8 @@
-<h1>Main</h1>
-
-<!-- Will only show default text via nullish coalescing if null/undefined
-Notice that "" and [] do not default -->
-<h2>Case 1: {{ this.caseOne ?? "Default Text" }}</h2>
-<h2>Case 2: {{ this.caseTwo ?? "Default Text" }}</h2>
-<h2>Case 3: {{ this.caseThree ?? "Default Text"}}</h2>
-<h2>Case 4: {{ this.caseFour ?? "Default Text"}}</h2>
-<h2>Case 5: {{ this.caseFive ?? "DefaultText"}}</h2>
-<h2>Case 6: {{ this.caseSix ?? "DefaultText"}}</h2>
-<h2>Case 7: {{ this.caseSeven ?? "DefaultText"}}</h2>
+<h1>Factory Pattern example</h1>
+<ng-template #dynamicComponent></ng-template>
+<br><br>
+<button [style.width]="'200px'" (click)="createTopComponent()">Create Top Component</button>
+<br>
+<button [style.width]="'200px'" (click)="createBottomComponent()">Create Button Component</button>
+<br>
+<button [style.width]="'200px'" (click)="clear()">Clear</button>

@@ -35,5 +35,6 @@
 34) ViewChild (demonstrate static prop: true vs false) - Angular 9
 35) Async pipe use cases
 36) Nullish Coalescing - Angular 12
+37) Create components (using ViewContainerRef createComponent()) - Angular 13
 
 Commits correspond to each exercises

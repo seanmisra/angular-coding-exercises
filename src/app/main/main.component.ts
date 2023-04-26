@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup  } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { interval, Observable, of, ReplaySubject, Subject, Subscription } from 'rxjs';
@@ -12,14 +12,7 @@ import { MainTopComponent } from './main-top/main-top.component';
 })
 export class MainComponent implements OnInit, AfterViewInit {
 
-  caseOne = "Hello World";
-  caseTwo = null;
-  caseThree = "";
-  caseFour = undefined;
-  caseFive = 10;
-  caseSix = [];
-  caseSeven = [1, 2, 3];
-
+  @ViewChild("dynamicComponent", {read: ViewContainerRef}) dynamicComponent: ViewContainerRef;
 
   constructor() { }
 
@@ -35,5 +28,19 @@ export class MainComponent implements OnInit, AfterViewInit {
   ngOnDestroy() {
   }
 
+  createTopComponent() {
+    this.dynamicComponent.clear();
+    this.dynamicComponent.createComponent(MainTopComponent);
 
+  }
+
+  createBottomComponent() {
+    this.dynamicComponent.clear();
+    this.dynamicComponent.createComponent(MainBottomComponent);
+  }
+
+  clear() {
+    this.dynamicComponent.clear();
+  }
+ 
 }
