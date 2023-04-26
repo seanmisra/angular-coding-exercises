@@ -39,5 +39,6 @@
 38) Singleton service example
 39) ngOnInit vs ngAfterContentInit vs ngAfterViewInit (demonstrate timing differences)
 40) rxjs timer vs setInterval use case
+41) HttpInterceptor (intercept a request and inject an auth token)
 
 Commits correspond to each exercises

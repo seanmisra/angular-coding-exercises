@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TestChildComponent } from './test-child/test-child.component';
@@ -15,6 +15,7 @@ import { StoreModule } from '@ngrx/store';
 import { CookieService } from 'ngx-cookie-service';
 import { MainTopComponent } from './main/main-top/main-top.component';
 import { MainBottomComponent } from './main/main-bottom/main-bottom.component';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,14 @@ import { MainBottomComponent } from './main/main-bottom/main-bottom.component';
     ReactiveFormsModule,
     StoreModule.forRoot({}, {})
   ],
-  providers: [CookieService],
+  providers: [
+    CookieService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
