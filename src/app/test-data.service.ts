@@ -3,7 +3,7 @@ import { Injectable, OnDestroy } from "@angular/core";
 import { of, Observable, map, debounceTime, distinctUntilChanged, forkJoin, Subscription, delay, catchError } from 'rxjs';
 
 @Injectable({
-    providedIn: "root"
+    providedIn: null
 })
 export class TestData implements OnDestroy {
     private $animalSub = new Subscription();

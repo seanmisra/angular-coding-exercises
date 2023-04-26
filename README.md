@@ -36,5 +36,6 @@
 35) Async pipe use cases
 36) Nullish Coalescing - Angular 12
 37) Create components (using ViewContainerRef createComponent()) - Angular 13
+38) Singleton service example
 
 Commits correspond to each exercises

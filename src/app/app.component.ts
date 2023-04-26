@@ -9,7 +9,8 @@ import { debounceTime, distinctUntilChanged, Subscription, mergeMap, tap, switch
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [TestData]
 })
 export class AppComponent implements OnInit {
 
@@ -22,6 +23,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    const allAnimals = this.testData.getAllAnimals();
+    setTimeout(() => {
+      console.log(allAnimals);
+    }, 1000); // dummy timeout to wait for data to return
   }
 
   ngOnDestroy() {
