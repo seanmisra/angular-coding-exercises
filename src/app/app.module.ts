@@ -16,6 +16,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { MainTopComponent } from './main/main-top/main-top.component';
 import { MainBottomComponent } from './main/main-bottom/main-bottom.component';
 import { TokenInterceptor } from './token.interceptor';
+import { SortPurePipe } from './sort-pure.pipe';
+import { SortImpurePipe } from './sort-impure.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TokenInterceptor } from './token.interceptor';
     ErrorPipe,
     MainComponent,
     MainTopComponent,
-    MainBottomComponent
+    MainBottomComponent,
+    SortPurePipe,
+    SortImpurePipe
   ],
   imports: [
     BrowserModule,

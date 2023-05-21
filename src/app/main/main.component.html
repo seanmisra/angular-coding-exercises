@@ -1,1 +1,20 @@
-<h1>HttpInterceptor Test</h1>
+<h1>Pure Pipe</h1>
+<div class *ngFor="let sport of sampleSportsOne | sortPure">
+    {{ sport }}
+</div>
+
+<h1>Impure Pipe</h1>
+<div class *ngFor="let sport of sampleSportsTwo | sortImpure">
+    {{ sport }}
+</div>
+
+
+<br>
+<button (click)="addSport()">Add element to sports array (badminton)</button>
+<br>
+<button (click)="addSportByReference()">Add element to sports array by reference (badminton)</button>
+<br>
+<p>
+    Impure pipe is less efficient. Notice how many times it will be called in console.
+    However, the impure pipe will update even if the change is not made by reference
+</p>

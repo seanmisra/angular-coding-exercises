@@ -17,6 +17,26 @@ export class MainComponent implements OnInit, AfterViewInit {
 
   constructor(private testData: TestData) { }
 
+  sampleSportsOne = [
+    "tennis",
+    "soccer",
+    "basketball",
+    "baseball",
+    "hockey",
+    "cricket",
+    "golf"
+  ]
+
+  sampleSportsTwo = [
+    "tennis",
+    "soccer",
+    "basketball",
+    "baseball",
+    "hockey",
+    "cricket",
+    "golf"
+  ]
+
   ngOnInit(): void {
     // will make 3 http calls
     this.testData.getAllAnimals();
@@ -28,5 +48,21 @@ export class MainComponent implements OnInit, AfterViewInit {
   ngOnDestroy() {
   }
 
+  addSport() {
+    this.sampleSportsOne.push("badminton");
+    this.sampleSportsTwo.push("badminton");
+  }
+
+  addSportByReference() {
+    this.sampleSportsOne = [
+      "badminton",
+      ...this.sampleSportsOne
+    ]
+    
+    this.sampleSportsTwo = [
+      "badminton",
+      ...this.sampleSportsTwo
+    ]
+  }
  
 }

@@ -36,9 +36,10 @@
 35) Async pipe use cases
 36) Nullish Coalescing - Angular 12
 37) Create components (using ViewContainerRef createComponent()) - Angular 13
-38) Singleton service example
+38) Non-Singleton service example
 39) ngOnInit vs ngAfterContentInit vs ngAfterViewInit (demonstrate timing differences)
 40) rxjs timer vs setInterval use case
 41) HttpInterceptor (intercept a request and inject an auth token)
+42) Pure vs Impure Pipe (demonstrate the differences including when making changes by reference or not)
 
 Commits correspond to each exercises

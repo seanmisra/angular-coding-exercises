@@ -23,7 +23,6 @@ export class TokenInterceptor implements HttpInterceptor {
   // If-None-Match: W/"d5-/lhxOSH31xaQGc5omEikb2TOsl4"
   
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log("intercepted request!");
     const dummyToken = "bearer123123124";
     const headers = new HttpHeaders().set('access-token', dummyToken);
     const tokenizedRequest = request.clone(
